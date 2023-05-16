@@ -12,7 +12,7 @@
       @click.stop="select"
     >
       <i
-        class="tree-arrow" :tabindex="node.children.length || node.isBatch? 0 : -1"
+        class="tree-arrow" :tabindex="node.isBatch || node.children.length? 0 : -1"
         :class="[{'expanded': node.states.expanded, 'has-child': node.children.length || node.isBatch}, options.direction]"
         @click.stop="toggleExpand"
         @keyup.enter="toggleExpand"
